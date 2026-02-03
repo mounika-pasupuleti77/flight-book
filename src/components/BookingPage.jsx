@@ -6,12 +6,10 @@ import './BookingPage.css';
 
 function BookingPage({ flight }) {
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const [passengers, setPassengers] = useState(1);
+  const passengers = 1
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    setPassengers()
-  })
+
 
   if (!flight) {
     return <div>No flight selected</div>;
