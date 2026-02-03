@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Plane, MapPin, Calendar, Users, CreditCard } from 'lucide-react';
+import { Plane, Calendar, Users, CreditCard } from 'lucide-react';
 import './BookingPage.css';
 
 function BookingPage({ flight }) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [passengers, setPassengers] = useState(1);
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    setPassengers()
+  })
 
   if (!flight) {
     return <div>No flight selected</div>;
